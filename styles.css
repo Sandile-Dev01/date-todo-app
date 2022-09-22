@@ -1,0 +1,22 @@
+body{
+    font-family: Georgia, 'Times New Roman';
+}
+
+button {
+    font-family: Georgia, 'Times New Roman';
+    padding: .2em 2em;
+    color: white;
+    background-color: rgb(5, 5, 146);
+    margin: .3em .3em;
+    border-radius: .2em;
+}
+
+button:hover{
+    cursor: pointer;
+    opacity: .6;
+}
+
+#todo-title{
+    font-family: Georgia, 'Times New Roman';
+    padding: .2em auto;
+}
