@@ -47,12 +47,14 @@ body{
   
   /* Set all odd list items to a different color (zebra-stripes) */
   ul li:nth-child(odd) {
-    background:var(--white);
+    background:var(--light-grey
+    );
   }
   
   /* Darker background-color on hover */
   ul li:hover {
     background: var(--light-grey);
+    color: var(--blue);
   }
   
   /* When clicked on, add a background color and strike out text */
@@ -137,4 +139,5 @@ body{
   
   .addBtn:hover {
     background-color: var(--grey);
+    color: var(--white);
   }
