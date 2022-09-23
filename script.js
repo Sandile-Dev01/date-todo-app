@@ -1,107 +1,55 @@
-//Model section
-
-let todos;
-
-//Retrieve data from LocalStorage
-
-const savedTodos = JSON.parse(localStorage.getItem('todos'));
-
-//Check if it's an array
-
-if(Array.isArray(savedTodos)){
-
-    todos = savedTodos;
-    }else{
-        todos = [{
-            title: 'Write notes',
-            dueDate: '2022-07-24',
-            id: 'id1'
-        },
-        
-        {
-            title: 'Submit assignment',
-            dueDate: '2022-07-22',
-            id: 'id2'
-        },
-        
-        {
-            title: 'Cook dinner',
-            dueDate: '2022-07-23',
-            id: 'id3'
-        }]
-    }
-
-//Creates a todo
-
-function createTodo(title, dueDate){
-
-    const id = '' + new Date().getTime();
-
-    todos.push({
-        title: title,
-        dueDate: dueDate,
-        id: id
-    });
-
-    saveTodos();
-} 
-
-//Deletes a todo
-
-function removeTodo(idToDelete){
-    todos = todos.filter(function(todo){
-        if(todo.id === idToDelete){
-            return false
-        }else{
-            return true;
-        }
-    });
+// Create a "close" button and append it to each list item
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
 }
 
-function saveTodos(){
-    localStorage.setItem('todos', JSON.stringify(todos));
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
 }
 
-render();
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
 
-//Controller section
-function addTodo(){
-    const textbox = document.getElementById('todo-title');
-    const title = textbox.value;
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
 
-    const datePicker = document.getElementById('date-picker');
-    const dueDate = datePicker.value;
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
 
-    createTodo(title, dueDate);
-    render();
-}   
-
-    function deleteTodo(event){
-        const deleteButton = event.target;
-        const idToDelete = deleteButton.id;
-
-        removeTodo(idToDelete);
-        render();
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
     }
-
-//View section
-    function render(){
-
-        //reset our list so that one value can be added per click
-
-        document.getElementById('todo-list').innerHTML = '';
-
-        todos.forEach(function(todo){
-            const element = document.createElement('div');
-            element.innerText = todo.title + ' ' + todo.dueDate;
-            
-            const deleteButton = document.createElement('button');
-            deleteButton.innerText = 'Delete';
-            deleteButton.onclick = deleteTodo;
-            deleteButton.id = todo.id;
-            element.appendChild(deleteButton);
-            
-            const todoList = document.getElementById('todo-list')
-            todoList.appendChild(element);
-        });
-    }
+  }
+}
