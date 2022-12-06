@@ -1,31 +1,45 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans&family=Rubik+Dirt&display=swap" rel="stylesheet">
-        <title>Todo List</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <body>
+    <title>Todo List</title>
+    <link rel="stylesheet" href="/SCSS/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
 
-        <div id="myDIV" class="header">
-            <h2 style="margin:5px">My To Do List</h2>
-            <input type="text" id="myInput" placeholder="Title...">
-            <span onclick="newElement()" class="addBtn">Add</span>
-          </div>
-          
-          <ul id="myUL">
-            <li>Hit the gym</li>
-            <li class="checked">Pay bills</li>
-            <li>Meet George</li>
-            <li>Buy eggs</li>
-            <li>Read a book</li>
-            <li>Organize office</li>
-          </ul>
+  <body>
+    <div id="myDIV" class="header bg-blue-500">
+      <h2 class="py-2">My To Do List</h2>
+      <input type="text" id="myInput" placeholder="Title..." />
+      <span onclick="newElement()" class="addBtn">Add</span>
+    </div>
 
-        <script src="script.js"></script>
-    </body>
-    </html>
+    <ul id="myUL">
+      <li class="checked">Learn more about how the internet works</li>
+      <li class="checked">Learn HTML</li>
+      <li class="checked">Learn CSS</li>
+      <li class="checked">Learn Javascript</li>
+      <li class="checked">Learn Bootstrap</li>
+      <li class="checked">Learn Tailwind CSS</li>
+      <li class="checked">Learn SASS (SCSS)</li>
+      <li class="checked">Learn mobile first responsiveness method</li>
+      <li class="checked">Learn the basics of React JS</li>
+      <li class="checked">Learn JQuery</li>
+      <li class="checked">Learn the fundamentals of UI/ UX design</li>
+      <li class="checked">Learn Figma & Canva</li>
+      <li class="checked">Learn Git version control</li>
+      <li class="checked">Learn more about Github</li>
+      <li class="checked">Create my website portfolio</li>
+      <li class="checked">
+        Build projects using my acquired skills using VS Code and deploy them to
+        Github with Git Bash
+      </li>
+      <li>Get a job as a Frontend Developer</li>
+    </ul>
+
+    <script src="script.js"></script>
+  </body>
+</html>

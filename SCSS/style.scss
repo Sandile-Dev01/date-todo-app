@@ -12,7 +12,6 @@ body{
     --grey: #888;
     --light-grey: #ddd;
 
-    --blue: #366ff4;
     --red: #f44336;
 
 }
@@ -54,7 +53,7 @@ body{
   /* Darker background-color on hover */
   ul li:hover {
     background: var(--light-grey);
-    color: var(--blue);
+    // color: var(--blue);
   }
   
   /* When clicked on, add a background color and strike out text */
@@ -93,7 +92,7 @@ body{
   
   /* Style the header */
   .header {
-    background-color: var(--blue);
+    // background-color: var(--blue);
     padding: 30px 40px;
     color: var(--white);
     text-align: center;
@@ -119,6 +118,7 @@ body{
   }
 
   input:focus{
+    color: #888;
     border: none;
     outline: none;
   }
